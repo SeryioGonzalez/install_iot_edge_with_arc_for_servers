@@ -16,10 +16,10 @@ The last script will install Azure IoT Edge purely using Azure Arc-enabled serve
 ### Requirements
 - **Azure Subscription**
 - **Environment variables** with sensitive data should be created. I usually configure them in the .bashrc start-up script:
-		- subscription_id
-		- tenant_id
-		- public_key_file
-		- private_key_file
+	- subscription_id
+	- tenant_id
+	- public_key_file
+	- private_key_file
 		
 - **Service Principal** with role Contributor in the scope of the RG used in this demo. More granular roles should be used in production environments. Store the principal information in a file named **.az_arc_onboarding_principal.json** with the following content in the project root:
 ```
