@@ -8,9 +8,6 @@ az account set -s $subscription_id
 echo "Deleting existing public key identities for VM $vm_name"
 ssh-keygen -q -f "/home/$user_name/.ssh/known_hosts" -R "$vm_name" > /dev/null
 
-echo "Downloading ARC install script on vm $vm_name"
-az vm run-command invoke -g $rg --name $vm_name --command-id RunShellScript --scripts "wget -q https://aka.ms/azcmagent -O /home/$user_name/$arc_install_script" -o none
-
 echo "WARNING - We need to disable azure capabilites for installing ARC on an Azure VM"
 echo "WARNING - From now on, we cannot keep using azure vm run-command, since the VM will be 'de-Azurized'. This is just a demo"
 
@@ -23,7 +20,12 @@ ssh -p $ssh_port -o 'StrictHostKeyChecking no' $VM_PUBLIC_IP "sudo systemctl sto
 echo "Blocking outgoing IMDS connection from VM"
 ssh -p $ssh_port -o 'StrictHostKeyChecking no' $VM_PUBLIC_IP "sudo iptables -A OUTPUT -d 169.254.169.254 -j DROP" && echo "Succedeed"
 
-echo "Executing ARC agent installation script on ARC VM"
+echo "WARNING - At this stage, Azure Compute is not able to manage this VM anymore"
+
+echo "Downloading ARC installation script script on target server $vm_name"
+ssh -p $ssh_port -o 'StrictHostKeyChecking no' $VM_PUBLIC_IP "wget -q https://aka.ms/azcmagent -O /home/$user_name/$arc_install_script" -o none
+
+echo "Executing ARC agent installation script on target server $vm_name"
 ssh -p $ssh_port -o 'StrictHostKeyChecking no' $VM_PUBLIC_IP "sudo bash /home/$user_name/$arc_install_script > /dev/null" && echo "Succedeed"
 
 echo "Connect to ARC with service principal"

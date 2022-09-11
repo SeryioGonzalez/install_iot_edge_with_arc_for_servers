@@ -6,7 +6,7 @@ tenant_id=$AZURE_TENANT_ID
 public_key_file=$PUBLIC_KEY_FILE
 private_key_file=$PRIVATE_KEY_FILE
 
-environment_name="sergioarc"
+environment_name="seryioarc"
 user_name="sergio"
 
 rg=$environment_name"rg"

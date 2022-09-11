@@ -8,6 +8,7 @@ az account set -s $subscription_id
 echo "Deleting existing public key identities for VM $vm_name"
 ssh-keygen -q -f "/home/$user_name/.ssh/known_hosts" -R "$vm_name" > /dev/null
 
+echo "This script uses Azure ARC-enabled server capabilities"
 echo "Pushing IoT Edge installer to $vm_name"
 push_file_to_arc_vm $iot_edge_install_script
 
