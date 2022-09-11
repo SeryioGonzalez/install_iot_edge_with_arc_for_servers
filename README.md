@@ -1,1 +1,2 @@
-# install_iot_edge_with_arc_for_servers
+# Install Azure IoT Edge runtime on an server using Azure ARC
+## Install Azure IoT Edge runtime on an server using Azure ARC
