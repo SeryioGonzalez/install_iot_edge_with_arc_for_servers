@@ -1,4 +1,4 @@
-# Install Azure IoT Edge runtime on an server using Azure ARC-enabled servers
+# Install Azure IoT Edge using Azure ARC-enabled servers
 ### Overview ###
 The purpose is to leverage the capabilities of [Azure ARC-enabled Servers](https://docs.microsoft.com/en-us/azure/azure-arc/servers/overview) to install arbitrary software in a remote machine. In this case the [Azure IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/iot-edge-runtime?view=iotedge-1.4) runtime.
 
