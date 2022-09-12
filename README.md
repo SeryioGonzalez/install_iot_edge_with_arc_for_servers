@@ -7,7 +7,7 @@ I will devide the process on 3 distinct scripts:
 
  - [1_create_az_arc_iaas.sh](https://github.com/SeryioGonzalez/install_iot_edge_with_arc_for_servers/blob/main/1_create_az_arc_iaas.sh "1_create_az_arc_iaas.sh")
  - [2_install_arc_on_vm.sh](https://github.com/SeryioGonzalez/install_iot_edge_with_arc_for_servers/blob/main/1_create_az_arc_iaas.sh "2_install_arc_on_vm.sh")
- - [3_install_iot_edge_via_arc_for_servers.sh](https://github.com/SeryioGonzalez/install_iot_edge_with_arc_for_servers/blob/main/1_create_az_arc_iaas.sh "3_install_iot_edge_via_arc_for_servers.sh")
+ - [3_install_iot_edge_via_arc_for_servers.sh](https://github.com/SeryioGonzalez/install_iot_edge_with_arc_for_servers/blob/main/3_install_iot_edge_via_arc_for_servers.sh "3_install_iot_edge_via_arc_for_servers.sh")
 
 The first script will create a regular Azure VM. It will reconfigure SSH port to a preconfigured variable other than 22 in order to avoid collisions with certain enterprise [Azure Policies](https://docs.microsoft.com/en-us/azure/governance/policy/overview).
 The second script will "de-Azurized" the VM and install Azure ARC-enabled Server agents and connect the agent as an Azure ARC-enabled Server.
