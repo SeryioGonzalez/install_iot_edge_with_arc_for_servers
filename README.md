@@ -43,6 +43,5 @@ USER           ->>  AzARM API: ARC SSH Install IoT Edge
 AzARM API      ->> Target Server: ARC SSH Install IoT Edge
 Target Server  ->>   AzARM API: 
 AzARM API      ->>  USER: OK
-Target Server  ->>  USER: OK
 Target Server  ->>  Az IoT Hub: Connect
 ```
